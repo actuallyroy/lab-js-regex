@@ -59,9 +59,13 @@ class User{
     }
     
     verifyPassword(){
-        if(this.password != "" && this.passwordPattern.test(this.email) && this.confirmPassword != "" && this.confirmPassword == this.password){
+        if(this.password != "" && this.passwordPattern.test(this.email)){
             document.getElementById("passwordA").innerHTML = "";
+        }
+        if(this.confirmPassword != "" && this.confirmPassword == this.password){
             document.getElementById("confirm-psswordA").innerHTML = "";
+        }
+        if(this.password != "" && this.passwordPattern.test(this.email) && this.confirmPassword != "" && this.confirmPassword == this.password){
             return true;
         }
         if (this.password == ""){
