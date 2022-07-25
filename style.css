@@ -27,3 +27,7 @@ input{
 .alert{
     color: red;
 }
+
+#successTxt{
+    color: green;
+}
