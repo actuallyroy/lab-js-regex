@@ -27,19 +27,28 @@ class User{
     }
     
     verifyName(){
-        if(this.name != "") return true;
+        if(this.name != "") {
+            document.getElementById("nameA").innerHTML = "";
+            return true
+        };
         document.getElementById("nameA").innerHTML = this.ErrorTxt.fillName
         return false;
     }
     
     verifyAddress(){
-        if(this.address != "") return true; 
+        if(this.address != "") {
+            document.getElementById("addressA").innerHTML = "";
+            return true
+        }; 
         document.getElementById("addressA").innerHTML = this.ErrorTxt.fillAddress
         return false;
     }
     
     verifyEmail(){
-        if(this.email != "" && this.emailPattern.test(this.email)) return true;
+        if(this.email != "" && this.emailPattern.test(this.email)) {
+            document.getElementById("emailA").innerHTML = "";
+            return true
+        };
         
         if (this.email == ""){
             document.getElementById("emailA").innerHTML = this.ErrorTxt.fillEmail;
@@ -51,6 +60,8 @@ class User{
     
     verifyPassword(){
         if(this.password != "" && this.passwordPattern.test(this.email) && this.confirmPassword != "" && this.confirmPassword == this.password){
+            document.getElementById("passwordA").innerHTML = "";
+            document.getElementById("confirm-psswordA").innerHTML = "";
             return true;
         }
         if (this.password == ""){
@@ -68,7 +79,10 @@ class User{
     }
     
     verifyPhone() {
-        if(this.phone != "") return true;
+        if(this.phone != "") {
+            document.getElementById("phoneA").innerHTML = "";
+            return true
+        };
         document.getElementById("phoneA").innerHTML = this.ErrorTxt.fillField;
         return false;
     }
